@@ -1,14 +1,10 @@
 services:
   somnia:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: somnia:latest
+    image: holdenstill/somnia:latest
     container_name: somnia
     restart: unless-stopped
     ports:
-      # TrueNAS Host Port 9000 -> Container Port 8000
-      - "9000:8000"
+      - "8000:8000"
     environment:
       # Optional: can be provided here or configured via Web Settings
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}

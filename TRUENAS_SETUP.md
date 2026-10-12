@@ -31,29 +31,29 @@ From the root of the Somnia repository:
 docker login
 
 # 2. Build the production multi-stage image
-docker build -t yourdockerhubuser/somnia:latest .
+docker build -t holdenstill/somnia:latest .
 
 # 3. Push to Docker Hub
-docker push yourdockerhubuser/somnia:latest
+docker push holdenstill/somnia:latest
 ```
 
 ### Method B: Push to GitHub Container Registry (GHCR)
 ```bash
 # 1. Authenticate with GitHub Container Registry
 export CR_PAT=YOUR_GITHUB_PERSONAL_ACCESS_TOKEN
-echo $CR_PAT | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+echo $CR_PAT | docker login ghcr.io -u holdenstill --password-stdin
 
 # 2. Build and tag the image
-docker build -t ghcr.io/yourgithubuser/somnia:latest .
+docker build -t ghcr.io/holdenstill/somnia:latest .
 
 # 3. Push to GHCR
-docker push ghcr.io/yourgithubuser/somnia:latest
+docker push ghcr.io/holdenstill/somnia:latest
 ```
 
 > **Cross-Platform / Multi-Arch Note**:
 > If you are building on an **Apple Silicon (ARM64)** Mac but deploying to an **x86_64 / amd64** TrueNAS SCALE server, use `docker buildx` to ensure binary compatibility:
 > ```bash
-> docker buildx build --platform linux/amd64 -t yourdockerhubuser/somnia:latest --push .
+> docker buildx build --platform linux/amd64 -t holdenstill/somnia:latest --push .
 > ```
 
 ### Method C: Build Directly on TrueNAS SCALE (via Shell/SSH)
@@ -61,7 +61,7 @@ If you prefer not to use an external registry:
 1. Open TrueNAS **System Settings** > **Shell** (or SSH into your server).
 2. Clone or transfer the project files:
    ```bash
-   git clone <your-repo-url> /tmp/somnia
+   git clone https://github.com/HoldenStill/somnia.git /tmp/somnia
    cd /tmp/somnia
    docker build -t somnia:latest .
    ```
@@ -98,7 +98,7 @@ Somnia persists its SQLite database (`somnia.db`), batch results, and log export
 * **Application Name**: `somnia`
 
 ### Container Image
-* **Image repository**: `yourdockerhubuser/somnia` (or `somnia` if built locally)
+* **Image repository**: `holdenstill/somnia` (or `somnia` if built locally)
 * **Image tag**: `latest`
 * **Image Pull Policy**: `IfNotPresent` (or `Always` if using an external registry)
 
@@ -137,7 +137,7 @@ If you use Docker Compose directly on TrueNAS or run a manager like Dockge or Po
 ```yaml
 services:
   somnia:
-    image: yourdockerhubuser/somnia:latest
+    image: holdenstill/somnia:latest
     container_name: somnia
     restart: unless-stopped
     ports:

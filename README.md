@@ -7,6 +7,7 @@
 **Run bulk LLM workloads asynchronously at a 50% discount with zero rate-limit anxiety, beautiful KaTeX math rendering, and Docker / TrueNAS Scale simplicity.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Docker Hub](https://img.shields.io/badge/Docker_Hub-holdenstill%2Fsomnia-2496ed.svg?logo=docker&logoColor=white)](https://hub.docker.com/r/holdenstill/somnia)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![React 18](https://img.shields.io/badge/React-18-61dafb.svg)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8.svg)](https://tailwindcss.com/)
@@ -21,7 +22,7 @@
 > ### 🤖 Project Genesis & Attribution Disclosure
 > **100% of the code, backend architecture, frontend interfaces, unit test suites, and Docker containerization in this repository were designed, generated, and verified entirely by Gemini Antigravity** (Google DeepMind's Advanced Agentic Coding assistant).
 >
-> The human author, **HoldenStill** ([@Holden](https://github.com/HoldenStill)), provided the initial concept, core requirements, homelab infrastructure needs, iterative feature directions (such as electrical engineering use cases, scroll fatigue solutions, KaTeX LaTeX math support, and cost transparency), and human evaluation. Every line of Python, TypeScript, SQL, Tailwind CSS, shell scripts, and documentation was implemented and tested by the autonomous AI assistant.
+> The human author, **HoldenStill** ([@HoldenStill](https://github.com/HoldenStill)), provided the initial concept, core requirements, homelab infrastructure needs, iterative feature directions (such as electrical engineering use cases, scroll fatigue solutions, KaTeX LaTeX math support, and cost transparency), and human evaluation. Every line of Python, TypeScript, SQL, Tailwind CSS, shell scripts, and documentation was implemented and tested by the autonomous AI assistant.
 
 ---
 
@@ -74,7 +75,7 @@ Upload a CSV of inputs, write a template with `{{variable}}` substitution, selec
 
 ### Option 1: Docker Compose (Recommended)
 
-Save the following as `docker-compose.yml`:
+You can download [`docker-compose.yml`](docker-compose.yml) and sample [`example_circuits.csv`](example_circuits.csv) directly from [GitHub Releases](https://github.com/HoldenStill/somnia/releases), or save the following configuration:
 
 ```yaml
 services:
@@ -91,7 +92,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - ./somnia-data:/app/data
+      - ./data:/app/data
 ```
 
 Launch the container:
