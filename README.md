@@ -21,7 +21,7 @@
 > ### 🤖 Project Genesis & Attribution Disclosure
 > **100% of the code, backend architecture, frontend interfaces, unit test suites, and Docker containerization in this repository were designed, generated, and verified entirely by Gemini Antigravity** (Google DeepMind's Advanced Agentic Coding assistant).
 >
-> The human author, **Holden** ([@Holden](https://github.com/Holden)), provided the initial concept, core requirements, homelab infrastructure needs, iterative feature directions (such as electrical engineering use cases, scroll fatigue solutions, KaTeX LaTeX math support, and cost transparency), and human evaluation. Every line of Python, TypeScript, SQL, Tailwind CSS, shell scripts, and documentation was implemented and tested by the autonomous AI assistant.
+> The human author, **HoldenStill** ([@Holden](https://github.com/HoldenStill)), provided the initial concept, core requirements, homelab infrastructure needs, iterative feature directions (such as electrical engineering use cases, scroll fatigue solutions, KaTeX LaTeX math support, and cost transparency), and human evaluation. Every line of Python, TypeScript, SQL, Tailwind CSS, shell scripts, and documentation was implemented and tested by the autonomous AI assistant.
 
 ---
 
