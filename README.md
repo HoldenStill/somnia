@@ -27,7 +27,7 @@
 
 ## 💡 What is Somnia?
 
-When sending dozens or hundreds of prompts to top-tier LLMs (like Claude Sonnet 3.5/5.5, GPT-4o, DeepSeek R1/V4, or Gemini 2.5 Pro), real-time API requests have major drawbacks:
+When sending dozens or hundreds of prompts to top-tier LLMs (like the latest from Claude, GPT, DeepSeek, or Gemini), real-time API requests have major drawbacks:
 1. **You pay 100% full price** for synchronous inference.
 2. **You risk rate limits (429), gateway timeouts (504), and dropped browser tabs**.
 3. **You must write custom scripts** or inspect raw JSON files to gather results.
@@ -79,7 +79,7 @@ Save the following as `docker-compose.yml`:
 ```yaml
 services:
   somnia:
-    image: ghcr.io/holden/somnia:latest  # or build locally
+    image: holdenstill/somnia:latest  # or build locally
     container_name: somnia
     restart: unless-stopped
     ports:
@@ -107,7 +107,7 @@ Open **`http://localhost:8000`** in your browser.
 Somnia is specifically architected for TrueNAS Scale:
 1. In TrueNAS Scale, navigate to **Apps** → **Discover Apps** → **Install Custom App**.
 2. **Application Name**: `somnia`
-3. **Image repository**: `ghcr.io/holden/somnia` (tag: `latest`)
+3. **Image repository**: `holdenstill/somnia` (tag: `latest`)
 4. **Port Forwarding**: Host Port `8000` → Container Port `8000`.
 5. **Storage / Host Path Volume**:
    - Host Path: `/mnt/your-pool/appdata/somnia`
@@ -125,7 +125,7 @@ Somnia is specifically architected for TrueNAS Scale:
 #### 1. Backend Setup
 ```bash
 # Clone repository
-git clone https://github.com/Holden/somnia.git
+git clone https://github.com/holdenstill/somnia.git
 cd somnia
 
 # Set up Python virtual environment
