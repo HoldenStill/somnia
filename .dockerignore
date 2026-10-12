@@ -1,0 +1,39 @@
+.git
+.gitignore
+.dockerignore
+.github
+.pytest_cache
+.venv
+venv
+env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Frontend dev files
+frontend/node_modules
+frontend/dist
+frontend/.vite
+frontend/npm-debug.log*
+
+# Database & Runtime Data
+data
+backend/data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+results
+logs
+
+# Secrets and configs
+.env
+.env.*
+
+# Project documentation / screenshots
+PROJECT_STATE.md
+TRUENAS_SETUP.md
+shot.png
+*.md
+!README.md

@@ -1,0 +1,27 @@
+services:
+  somnia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: somnia:latest
+    container_name: somnia
+    restart: unless-stopped
+    ports:
+      # TrueNAS Host Port 9000 -> Container Port 8000
+      - "9000:8000"
+    environment:
+      # Optional: can be provided here or configured via Web Settings
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+      # Standard TrueNAS Scale user/group permissions to avoid volume lockouts
+      - PUID=1000
+      - PGID=1000
+      - POLL_INTERVAL_MINUTES=5
+    volumes:
+      # Persistent SQLite database (somnia.db) and batch results/logs
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
